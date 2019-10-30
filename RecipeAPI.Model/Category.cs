@@ -13,5 +13,10 @@ namespace RecipeAPI.Model
         {
             CategoryId = id;
         }
+
+        public Category(int categoryId, string categoryName) : this(categoryId)
+        {
+            CategoryName = categoryName;
+        }
     }
 }
