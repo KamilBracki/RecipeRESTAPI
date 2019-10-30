@@ -6,7 +6,12 @@ namespace RecipeAPI.Model
 {
     class Category
     {
-        public int CategoryId { get; set; }
+        public int CategoryId { get; private set; }
         public string CategoryName { get; set; }
+
+        public Category(int id)
+        {
+            CategoryId = id;
+        }
     }
 }
