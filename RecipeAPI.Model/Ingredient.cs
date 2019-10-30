@@ -12,5 +12,14 @@
         {
             IngredientId = id;
         }
+
+        public Ingredient(int ingredientId, string ingredientName, double proteins, 
+                        double carbohydrates, double fat) : this(ingredientId)
+        {
+            IngredientName = ingredientName;
+            Proteins = proteins;
+            Carbohydrates = carbohydrates;
+            Fat = fat;
+        }
     }
 }
