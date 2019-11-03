@@ -8,18 +8,16 @@
         public double Carbohydrates { get; set; }
         public double Fat { get; set; }
 
-        public Ingredient(int id)
-        {
-            IngredientId = id;
-        }
 
-        public Ingredient(int ingredientId, string ingredientName, double proteins, 
-                        double carbohydrates, double fat) : this(ingredientId)
+
+        public Ingredient(Builder builder)
         {
-            IngredientName = ingredientName;
-            Proteins = proteins;
-            Carbohydrates = carbohydrates;
-            Fat = fat;
+            IngredientId = builder.IngredientId;
+            IngredientName = builder.IngredientName;
+            Proteins = builder.Proteins;
+            Carbohydrates = builder.Proteins;
+            Fat = builder.Fat;
         }
+        
     }
 }
