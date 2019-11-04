@@ -1,4 +1,4 @@
-﻿using RecipeAPI.Model;
+﻿using RecipeAPI.AccessLayer.JoiningModels;
 using System.Collections.Generic;
 
 namespace RecipeAPI.AccessLayer.DBModels
@@ -12,11 +12,10 @@ namespace RecipeAPI.AccessLayer.DBModels
         public string LinkToPhoto { get; set; }
         public string MethodOfPreparation { get; set; }
         public double Kcal { get; set; }
-        public Dictionary<int, double> Ingredients { get; set; }
-        public List<Tag> Tags { get; set; }
-        public List<Category> Categories { get; set; }
+        public IList<RecipesTags> RecipesTags { get; set; }
+        public IList<RecipesCategories> RecipesCategories { get; set; }
 
-        public Recipe(int recipeId, string name, int preparationTime, string complexity, string linkToPhoto, string methodOfPreparation, double kcal, Dictionary<int, double> ingredients, List<Tag> tags, List<Category> categories)
+        public Recipe(int recipeId, string name, int preparationTime, string complexity, string linkToPhoto, string methodOfPreparation, double kcal)
         {
             RecipeId = recipeId;
             Name = name;
@@ -25,9 +24,6 @@ namespace RecipeAPI.AccessLayer.DBModels
             LinkToPhoto = linkToPhoto;
             MethodOfPreparation = methodOfPreparation;
             Kcal = kcal;
-            Ingredients = ingredients;
-            Tags = tags;
-            Categories = categories;
         }
     }
 }
