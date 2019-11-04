@@ -2,7 +2,7 @@
 
 namespace RecipeAPI.AccessLayer.JoiningModels
 {
-    class RecipesIngredients
+    class RecipeIngredient
     {
         public int RecipeId { get; set; }
         public Recipe Recipe { get; set; }
@@ -10,14 +10,14 @@ namespace RecipeAPI.AccessLayer.JoiningModels
         public Ingredient Ingredient { get; set; }
         public double Weight { get; set; }
 
-        public RecipesIngredients(Recipe recipe, Ingredient ingredient, double weight)
+        public RecipeIngredient(Recipe recipe, Ingredient ingredient, double weight)
         {
             Recipe = recipe;
             Ingredient = ingredient;
             Weight = weight;
         }
 
-        public RecipesIngredients()
+        public RecipeIngredient()
         {
 
         }

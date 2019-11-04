@@ -12,8 +12,8 @@ namespace RecipeAPI.AccessLayer.DBModels
         public string LinkToPhoto { get; set; }
         public string MethodOfPreparation { get; set; }
         public double Kcal { get; set; }
-        public IList<RecipesTags> RecipesTags { get; set; }
-        public IList<RecipesCategories> RecipesCategories { get; set; }
+        public IList<RecipeTag> RecipesTags { get; set; }
+        public IList<RecipeCategory> RecipesCategories { get; set; }
 
         public Recipe(int recipeId, string name, int preparationTime, string complexity, string linkToPhoto, string methodOfPreparation, double kcal)
         {
