@@ -5,8 +5,13 @@ using System.Text;
 
 namespace RecipeAPI.AccessLayer
 {
-    class RecipesDataContext : DbContext
+
+    public class RecipeDataContext : DbContext
     {
+        public RecipeDataContext(DbContextOptions<RecipeDataContext> options) : base(options)
+        {
+
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
