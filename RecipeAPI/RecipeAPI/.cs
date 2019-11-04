@@ -1,6 +1,10 @@
-﻿namespace RecipeAPI.Model
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace RecipeAPI.Model
 {
-    public class Tag
+    class Tag
     {
         public int TagId { get; set; }
         public string TagName { get; set; }
