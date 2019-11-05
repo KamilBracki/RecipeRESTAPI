@@ -7,6 +7,8 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using RecipeAPI.AccessLayer;
+using RecipeAPI.Model.Model;
 
 namespace RecipeAPI
 {
@@ -14,6 +16,15 @@ namespace RecipeAPI
     {
         public static void Main(string[] args)
         {
+            using (var context = new RecipeDataContext())
+            {
+                var tag = new Tag
+                {
+                    TagName = "No KEY annotation" 
+                };
+                context.Tags.Add(tag);
+                context.SaveChanges();
+            }
             CreateWebHostBuilder(args).Build().Run();
         }
 
