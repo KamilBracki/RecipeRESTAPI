@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace RecipeAPI.Model
+namespace RecipeAPI.Model.Model
 {
 
     public class Recipe

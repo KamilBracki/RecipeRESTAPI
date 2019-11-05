@@ -1,4 +1,4 @@
-﻿namespace RecipeAPI.Model
+﻿namespace RecipeAPI.Model.Model
 {
     public class Ingredient
     {
@@ -56,7 +56,7 @@
                 Fat = fats;
                 return this;
             }
-            
+
 
             public Ingredient Build()
             {

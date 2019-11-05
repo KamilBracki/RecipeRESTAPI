@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RecipeAPI.Model
+﻿namespace RecipeAPI.Model.Model
 {
     public class Category
     {
