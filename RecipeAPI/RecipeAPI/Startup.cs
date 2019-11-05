@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-
+using RecipeAPI.AccessLayer;
 
 namespace RecipeAPI
 {
@@ -29,7 +29,7 @@ namespace RecipeAPI
         {
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            //services.AddDbContext<RecipeDataContext>(context => context.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<RecipeDataContext>(context => context.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
