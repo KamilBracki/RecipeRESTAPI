@@ -2,8 +2,8 @@
 {
     public class Ingredient
     {
-        public int IngredientId { get; private set; }
-        public string IngredientName { get; set; }
+        public int Id { get; private set; }
+        public string Name { get; set; }
         public double Proteins { get; set; }
         public double Carbohydrates { get; set; }
         public double Fat { get; set; }
@@ -12,30 +12,30 @@
 
         public Ingredient(Builder builder)
         {
-            IngredientId = builder.IngredientId;
-            IngredientName = builder.IngredientName;
+            Id = builder.Id;
+            Name = builder.Name;
             Proteins = builder.Proteins;
             Carbohydrates = builder.Carbohydrates;
             Fat = builder.Fat;
         }
         public class Builder
         {
-            public int IngredientId;
-            public string IngredientName;
+            public int Id;
+            public string Name;
             public double Proteins;
             public double Carbohydrates;
             public double Fat;
 
 
 
-            public Builder WithIngredientId(int id)
+            public Builder WithId(int id)
             {
-                IngredientId = id;
+                Id = id;
                 return this;
             }
             public Builder WithName(string name)
             {
-                IngredientName = name;
+                Name = name;
                 return this;
             }
 

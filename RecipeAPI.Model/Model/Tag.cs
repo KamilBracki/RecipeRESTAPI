@@ -2,13 +2,13 @@
 {
     public class Tag
     {
-        public int TagId { get; set; }
-        public string TagName { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
 
-        public Tag(int tagId, string tagName)
+        public Tag(int id, string name)
         {
-            TagId = tagId;
-            TagName = tagName;
+            Id = id;
+            Name = name;
         }
     }
 }

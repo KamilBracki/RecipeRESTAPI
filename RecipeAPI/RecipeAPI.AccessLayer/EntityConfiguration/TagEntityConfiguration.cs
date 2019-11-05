@@ -13,7 +13,7 @@ namespace RecipeAPI.AccessLayer.EntityConfiguration
         public void Configure(EntityTypeBuilder<Tag> builder)
         {
             builder
-                .Property(i => i.TagId)
+                .Property(i => i.Id)
                 .ValueGeneratedOnAdd();
         }
     }

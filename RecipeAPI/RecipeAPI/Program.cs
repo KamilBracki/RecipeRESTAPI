@@ -20,7 +20,7 @@ namespace RecipeAPI
             {
                 var tag = new Tag
                 {
-                    TagName = "No KEY annotation" 
+                    Name = "No KEY annotation" 
                 };
                 context.Tags.Add(tag);
                 context.SaveChanges();

@@ -5,7 +5,7 @@ namespace RecipeAPI.Model.Model
 
     public class Recipe
     {
-        public int RecipeId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public int PreparationTime { get; set; }
         public string Complexity { get; set; } /* to improve */
@@ -19,7 +19,7 @@ namespace RecipeAPI.Model.Model
 
         public Recipe(Builder builder)
         {
-            RecipeId = builder.RecipeId;
+            Id = builder.Id;
             Name = builder.Name;
             PreparationTime = builder.PreparationTime;
             Complexity = builder.Complexity;
@@ -32,7 +32,7 @@ namespace RecipeAPI.Model.Model
         }
         public class Builder
         {
-            public int RecipeId;
+            public int Id;
             public string Name;
             public int PreparationTime;
             public string Complexity;
@@ -46,7 +46,7 @@ namespace RecipeAPI.Model.Model
 
             public Builder WithId(int id)
             {
-                RecipeId = id;
+                Id = id;
                 return this;
             }
             public Builder WithName(string name)

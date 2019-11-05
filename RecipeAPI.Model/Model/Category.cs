@@ -2,17 +2,17 @@
 {
     public class Category
     {
-        public int CategoryId { get; private set; }
-        public string CategoryName { get; set; }
+        public int Id { get; private set; }
+        public string Name { get; set; }
 
         public Category(int id)
         {
-            CategoryId = id;
+            Id = id;
         }
 
-        public Category(int categoryId, string categoryName) : this(categoryId)
+        public Category(int id, string name) : this(id)
         {
-            CategoryName = categoryName;
+            Name = name;
         }
     }
 }
