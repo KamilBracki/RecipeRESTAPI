@@ -1,15 +1,15 @@
-﻿using RecipeAPI.Model;
+﻿using RecipeAPI.Model.Model;
 
-namespace RecipeAPI.AccessLayer.JoiningModels
+namespace RecipeAPI.Model.JoiningModel
 {
-    class RecipeTag
+    public class RecipeTag
     {
         public int RecipeId { get; set; }
-        public DBModels.Recipe Recipe { get; set; }
+        public DBModel.Recipe Recipe { get; set; }
         public int TagId { get; set; }
         public Tag Tag { get; set; }
 
-        public RecipeTag(DBModels.Recipe recipe, Tag tag)
+        public RecipeTag(DBModel.Recipe recipe, Tag tag)
         {
             Recipe = recipe;
             Tag = tag;

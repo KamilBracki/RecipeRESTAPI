@@ -1,16 +1,14 @@
-﻿using RecipeAPI.AccessLayer.DBModels;
-
-namespace RecipeAPI.AccessLayer.JoiningModels
+﻿namespace RecipeAPI.Model.JoiningModel
 {
-    class RecipeIngredient
+    public class RecipeIngredient
     {
         public int RecipeId { get; set; }
-        public Recipe Recipe { get; set; }
+        public DBModel.Recipe Recipe { get; set; }
         public int IngredientsId { get; set; }
-        public Ingredient Ingredient { get; set; }
+        public DBModel.Ingredient Ingredient { get; set; }
         public double Weight { get; set; }
 
-        public RecipeIngredient(Recipe recipe, Ingredient ingredient, double weight)
+        public RecipeIngredient(DBModel.Recipe recipe, DBModel.Ingredient ingredient, double weight)
         {
             Recipe = recipe;
             Ingredient = ingredient;
@@ -23,3 +21,4 @@ namespace RecipeAPI.AccessLayer.JoiningModels
         }
     }
 }
+

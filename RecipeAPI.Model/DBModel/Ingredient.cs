@@ -1,6 +1,6 @@
-﻿namespace RecipeAPI.AccessLayer.DBModels
+﻿namespace RecipeAPI.Model.DBModel
 {
-    class Ingredient
+    public class Ingredient
     {
         public int IngredientId { get; private set; }
         public string IngredientName { get; set; }

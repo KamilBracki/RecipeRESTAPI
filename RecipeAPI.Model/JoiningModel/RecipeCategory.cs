@@ -1,15 +1,15 @@
-﻿using RecipeAPI.Model;
+﻿using RecipeAPI.Model.Model;
 
-namespace RecipeAPI.AccessLayer.JoiningModels
+namespace RecipeAPI.Model.JoiningModel
 {
-    class RecipeCategory
+    public class RecipeCategory
     {
         public int RecipeId { get; set; }
-        public DBModels.Recipe Recipe { get; set; }
+        public DBModel.Recipe Recipe { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
-        public RecipeCategory(DBModels.Recipe recipe, Category category)
+        public RecipeCategory(DBModel.Recipe recipe, Category category)
         {
             Recipe = recipe;
             Category = category;

@@ -1,9 +1,9 @@
-﻿using RecipeAPI.AccessLayer.JoiningModels;
+﻿using RecipeAPI.Model.JoiningModel;
 using System.Collections.Generic;
 
-namespace RecipeAPI.AccessLayer.DBModels
+namespace RecipeAPI.Model.DBModel
 {
-    class Recipe
+    public class Recipe
     {
         public int RecipeId { get; set; }
         public string Name { get; set; }

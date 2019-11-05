@@ -1,4 +1,4 @@
-﻿namespace RecipeAPI.Model
+﻿namespace RecipeAPI.Model.Model
 {
     public class Tag
     {
