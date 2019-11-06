@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RecipeAPI.AccessLayer\RecipeAPI.AccessLayer.csproj" />
+    <ProjectReference Include="..\RecipesAPI.EntriesGenerator\RecipesAPI.EntriesGenerator.csproj" />
   </ItemGroup>
 
 </Project>

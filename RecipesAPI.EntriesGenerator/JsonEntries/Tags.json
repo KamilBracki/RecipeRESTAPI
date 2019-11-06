@@ -1,5 +1,6 @@
+
 [
-  "Vegan",
-  "Dessert",
-  "Lowfat"
+  { "Name": "Vegan" },
+  { "Name": "Lowfat" },
+  { "Name": "Dessert" }
 ]

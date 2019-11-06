@@ -1,6 +1,6 @@
 [
-  "Soup",
-  "Fish",
-  "Dessert",
-  "Main course"
+  { "Name": "Soup" },
+  { "Name": "Fish" },
+  { "Name": "Dessert" },
+  { "Name": "Main course" }
 ]

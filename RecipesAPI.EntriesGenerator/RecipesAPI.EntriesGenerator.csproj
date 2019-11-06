@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RecipeAPI.AccessLayer\RecipeAPI.AccessLayer.csproj" />
     <ProjectReference Include="..\RecipeAPI.Model\RecipeAPI.Model.csproj" />
   </ItemGroup>
 

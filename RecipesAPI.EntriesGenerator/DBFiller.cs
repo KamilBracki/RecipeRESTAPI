@@ -1,14 +1,30 @@
 ﻿using Nancy.Json;
-using RecipeAPI.Model.DBModel;
+using RecipeAPI.AccessLayer;
+using RecipeAPI.Model.Model;
+using System.Collections.Generic;
 using System.IO;
+using DBIngredient = RecipeAPI.Model.DBModel.Ingredient;
+using DBRecipe = RecipeAPI.Model.DBModel.Recipe;
 
 namespace RecipesAPI.EntriesGenerator
 {
     public class DBFiller
     {
-        public DBFiller() { }
+        private readonly RecipeDataContext _context;
+        public DBFiller(RecipeDataContext context)
+        {
+            _context = context;
+        }
 
-        public void GenerateObjects()
+        public void Run()
+        {
+            GenerateObjects();
+
+            _context.SaveChanges();
+
+
+        }
+        private void GenerateObjects()
         {
             JavaScriptSerializer js = new JavaScriptSerializer();
 
@@ -17,14 +33,42 @@ namespace RecipesAPI.EntriesGenerator
             var ingredientsJson = File.ReadAllText("..\\RecipesAPI.EntriesGenerator\\JsonEntries\\Ingredients.json");
             var recipesJson = File.ReadAllText("..\\RecipesAPI.EntriesGenerator\\JsonEntries\\Recipes.json");
 
+            // Lists of json objects
+            var categories = js.Deserialize<List<Category>>(categoriesJson);
+            var tags = js.Deserialize<List<Tag>>(tagsJson);
+            var ingredients = js.Deserialize<List<DBIngredient>>(ingredientsJson);
+            var recipes = js.Deserialize<List<DBRecipe>>(recipesJson);
 
-            string[] categories = js.Deserialize<string[]>(categoriesJson);
-            string[] tags = js.Deserialize<string[]>(tagsJson);
-            Ingredient[] ingredients = js.Deserialize<Ingredient[]>(ingredientsJson);
-            Recipe[] recipes = js.Deserialize<Recipe[]>(recipesJson);
+            PopulateDB(categories);
+            PopulateDB(tags);
+            PopulateDB(ingredients);
+            PopulateDB(recipes);
 
 
         }
+
+        private void PopulateDB(object list)
+        {
+            switch (list)
+            {
+                case List<Category> catList:
+
+                    break;
+                case List<Tag> tagList:
+                    foreach (var tag in tagList)
+                    {
+                        _context.Tags.Add(tag);
+                    }
+                    break;
+                case List<DBIngredient> ingList:
+                    break;
+                case List<DBRecipe> recList:
+                    break;
+                default:
+                    break;
+            }
+        }
+
 
     }
 }
