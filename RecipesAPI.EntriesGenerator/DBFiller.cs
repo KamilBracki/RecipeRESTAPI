@@ -1,11 +1,14 @@
-﻿using System;
-
-namespace RecipesAPI.EntriesGenerator
+﻿namespace RecipesAPI.EntriesGenerator
 {
     public class DBFiller
     {
-        public DBFiller() { }
+        DBFiller() { }
 
+        public void GenerateObjects()
+        {
+
+
+        }
 
     }
 }
