@@ -35,6 +35,7 @@ namespace RecipeAPI.AccessLayer
             modelBuilder.ApplyConfiguration(new RecipeTagEntityConfiguration());
             modelBuilder.Entity<RecipeCategory>().Ignore(t => t.Recipe);
             modelBuilder.Entity<RecipeIngredient>().Ignore(t => t.Ingredient);
+            modelBuilder.Entity<Recipe>().Ignore(t => t.RecipeIngredientsId);
 
 
         }
