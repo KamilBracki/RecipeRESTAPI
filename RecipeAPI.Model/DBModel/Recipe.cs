@@ -15,8 +15,8 @@ namespace RecipeAPI.Model.DBModel
         public double Kcal { get; set; }
         public IList<RecipeTag> RecipesTags { get; set; }
         public IList<RecipeCategory> RecipesCategories { get; set; }
-        [NotMapped]
-        public IList<int> RecipeIngredientsId { get; set; }
+        
+        public IList<RecipeIngredient> RecipeIngredientsId { get; set; }
 
         public Recipe(int id, string name, int preparationTime, string complexity, string linkToPhoto, string methodOfPreparation, double kcal)
         {
