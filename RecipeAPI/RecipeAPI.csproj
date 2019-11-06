@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RecipesAPI.EntriesGenerator\RecipesAPI.EntriesGenerator.csproj" />
+    <ProjectReference Include="..\RecipesAPI.EntriesGenerator\RecipeAPI.EntriesGenerator.csproj" />
   </ItemGroup>
 
 </Project>
