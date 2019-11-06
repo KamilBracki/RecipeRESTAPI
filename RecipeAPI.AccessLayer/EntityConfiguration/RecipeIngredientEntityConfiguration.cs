@@ -14,6 +14,8 @@ namespace RecipeAPI.AccessLayer.EntityConfiguration
             builder.HasKey(k => new { k.RecipeId, k.Ingredient });
             builder.Property(i => i.Id).ValueGeneratedOnAdd();
 
+            
+
         }
     }
 }

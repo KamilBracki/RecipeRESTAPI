@@ -8,11 +8,10 @@ namespace RecipeAPI.Model.JoiningModel
         [Key]
         public int Id { get; set; }
         public int RecipeId { get; set; }
-
-        [NotMapped]
         public DBModel.Recipe Recipe { get; set; }
+
+
         public int IngredientsId { get; set; }
-        [NotMapped]
         public DBModel.Ingredient Ingredient { get; set; }
         public double Weight { get; set; }
 

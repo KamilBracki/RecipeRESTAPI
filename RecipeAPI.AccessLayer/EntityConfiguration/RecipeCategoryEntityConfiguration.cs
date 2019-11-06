@@ -22,6 +22,7 @@ namespace RecipeAPI.AccessLayer.EntityConfiguration
                 .WithMany(rc => rc.RecipesCategories)
                 .HasForeignKey(r => r.RecipeId);
 
+            
         }
 
     }
