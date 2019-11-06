@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using RecipeAPI.AccessLayer;
+using RecipeAPI.Model.Model;
 
 namespace RecipeAPI
 {
@@ -7,11 +9,11 @@ namespace RecipeAPI
     {
         public static void Main(string[] args)
         {
-            /*using (var context = new RecipeDataContext())
+           /* using (var context = new RecipeDataContext())
             {
                 var tag = new Tag
                 {
-                    Name = "No KEY annotationt" 
+                    Name = "testing tag" 
                 };
                 context.Tags.Add(tag);
                 context.SaveChanges();

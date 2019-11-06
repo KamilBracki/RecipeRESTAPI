@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RecipeAPI.AccessLayer.EntityConfiguration;
+using RecipeAPI.Model.JoiningModel;
 using RecipeAPI.Model.Model;
 
 namespace RecipeAPI.AccessLayer
@@ -28,6 +29,9 @@ namespace RecipeAPI.AccessLayer
         }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
+        public virtual DbSet<RecipeCategory> RecipeCategories { get; set; }
+        public virtual DbSet<RecipeIngredient> RecipeIngredients{ get; set; }
+        public virtual DbSet<RecipeTag> RecipeTags { get; set; }
 
 
 
