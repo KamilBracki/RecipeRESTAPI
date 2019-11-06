@@ -9,19 +9,6 @@ namespace RecipeAPI
     {
         public static void Main(string[] args)
         {
-<<<<<<< HEAD
-           /* using (var context = new RecipeDataContext())
-            {
-                var tag = new Tag
-                {
-                    Name = "testing tag" 
-                };
-                context.Tags.Add(tag);
-                context.SaveChanges();
-            }*/
-=======
-
->>>>>>> dac35957ed27487ddded54e80e482425ab14c342
             CreateWebHostBuilder(args).Build().Run();
         }
 
