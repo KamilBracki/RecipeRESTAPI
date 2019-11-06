@@ -52,7 +52,10 @@ namespace RecipesAPI.EntriesGenerator
             switch (list)
             {
                 case List<Category> catList:
+                    foreach (var category in catList)
+                    {
 
+                    }
                     break;
                 case List<Tag> tagList:
                     foreach (var tag in tagList)
@@ -61,8 +64,16 @@ namespace RecipesAPI.EntriesGenerator
                     }
                     break;
                 case List<DBIngredient> ingList:
+                    foreach (var ingredient in ingList)
+                    {
+
+                    }
                     break;
                 case List<DBRecipe> recList:
+                    foreach (var recipe in recList)
+                    {
+
+                    }
                     break;
                 default:
                     break;
