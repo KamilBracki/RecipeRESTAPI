@@ -6,7 +6,7 @@ using System.IO;
 using DBIngredient = RecipeAPI.Model.DBModel.Ingredient;
 using DBRecipe = RecipeAPI.Model.DBModel.Recipe;
 
-namespace RecipesAPI.EntriesGenerator
+namespace RecipeAPI.EntriesGenerator
 {
     public class DBFiller
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using RecipeAPI.AccessLayer;
-using RecipesAPI.EntriesGenerator;
+using RecipeAPI.EntriesGenerator;
 
 namespace RecipeAPI
 {
