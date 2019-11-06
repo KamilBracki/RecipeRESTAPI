@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace RecipeAPI.Model
+namespace RecipeAPI.Model.Model
 {
 
-    class Recipe
+    public class Recipe
     {
-        public int RecipeId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public int PreparationTime { get; set; }
         public string Complexity { get; set; } /* to improve */
@@ -21,7 +19,7 @@ namespace RecipeAPI.Model
 
         public Recipe(Builder builder)
         {
-            RecipeId = builder.RecipeId;
+            Id = builder.Id;
             Name = builder.Name;
             PreparationTime = builder.PreparationTime;
             Complexity = builder.Complexity;
@@ -34,7 +32,7 @@ namespace RecipeAPI.Model
         }
         public class Builder
         {
-            public int RecipeId;
+            public int Id;
             public string Name;
             public int PreparationTime;
             public string Complexity;
@@ -48,7 +46,7 @@ namespace RecipeAPI.Model
 
             public Builder WithId(int id)
             {
-                RecipeId = id;
+                Id = id;
                 return this;
             }
             public Builder WithName(string name)
