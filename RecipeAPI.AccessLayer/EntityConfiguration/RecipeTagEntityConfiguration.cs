@@ -13,6 +13,7 @@ namespace RecipeAPI.AccessLayer.EntityConfiguration
         public void Configure(EntityTypeBuilder<RecipeTag> builder)
         {
             builder.HasKey(k => new { k.RecipeId, k.TagId });
+            builder.Property(i => i.Id).ValueGeneratedOnAdd();
 
         }
     }

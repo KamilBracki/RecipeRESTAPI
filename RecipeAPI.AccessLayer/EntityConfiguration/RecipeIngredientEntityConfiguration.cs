@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -13,6 +12,7 @@ namespace RecipeAPI.AccessLayer.EntityConfiguration
         public void Configure(EntityTypeBuilder<RecipeIngredient> builder)
         {
             builder.HasKey(k => new { k.RecipeId, k.Ingredient });
+            builder.Property(i => i.Id).ValueGeneratedOnAdd();
 
         }
     }

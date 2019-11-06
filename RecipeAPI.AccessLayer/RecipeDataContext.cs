@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RecipeAPI.AccessLayer.EntityConfiguration;
+using RecipeAPI.Model.DBModel;
 using RecipeAPI.Model.JoiningModel;
 using RecipeAPI.Model.Model;
 
@@ -24,11 +25,23 @@ namespace RecipeAPI.AccessLayer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Tag>().ToTable("Tags");
+       
             modelBuilder.ApplyConfiguration(new TagEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new RecipeEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new IngredientEntityConfiguration());
+
+            modelBuilder.ApplyConfiguration(new RecipeCategoryEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new RecipeIngredientEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new RecipeTagEntityConfiguration());
+            modelBuilder.Entity<RecipeCategory>().Ignore(t => t.Recipe);
+            modelBuilder.Entity<RecipeIngredient>().Ignore(t => t.Ingredient);
+
+
         }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
+        public virtual DbSet<Recipe> Recipes { get; set; }
+        public virtual DbSet<Ingredient> Ingredients { get; set; }
         public virtual DbSet<RecipeCategory> RecipeCategories { get; set; }
         public virtual DbSet<RecipeIngredient> RecipeIngredients{ get; set; }
         public virtual DbSet<RecipeTag> RecipeTags { get; set; }
