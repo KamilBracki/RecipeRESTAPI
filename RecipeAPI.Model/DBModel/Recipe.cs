@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+
+using RecipeAPI.Model.JoiningModel;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RecipeAPI.Model.DBModel
 {
@@ -11,8 +14,13 @@ namespace RecipeAPI.Model.DBModel
         public string LinkToPhoto { get; set; }
         public string MethodOfPreparation { get; set; }
         public double Kcal { get; set; }
-        public IList<int> RecipesTags { get; set; }
-        public IList<int> RecipesCategories { get; set; }
+
+        public IList<RecipeTag> RecipesTags { get; set; }
+        public IList<RecipeCategory> RecipesCategories { get; set; }
+
+        [NotMapped]
+        public IList<int> RecipeIngredientsId { get; set; }
+
 
         public Recipe(int id, string name, int preparationTime, string complexity, string linkToPhoto, string methodOfPreparation, double kcal)
         {
@@ -27,14 +35,6 @@ namespace RecipeAPI.Model.DBModel
 
         public Recipe() { }
 
-        /*
-              "Ingredients": [
-      {
-        "1": 7
-      },
-      {
-        "3": 2
-      }
-    ],*/
+
     }
 }

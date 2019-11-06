@@ -54,7 +54,7 @@ namespace RecipesAPI.EntriesGenerator
                 case List<Category> catList:
                     foreach (var category in catList)
                     {
-
+                        _context.Categories.Add(category);
                     }
                     break;
                 case List<Tag> tagList:
@@ -66,13 +66,13 @@ namespace RecipesAPI.EntriesGenerator
                 case List<DBIngredient> ingList:
                     foreach (var ingredient in ingList)
                     {
-
+                        _context.Ingredients.Add(ingredient);
                     }
                     break;
                 case List<DBRecipe> recList:
                     foreach (var recipe in recList)
                     {
-
+                        _context.Recipes.Add(recipe);
                     }
                     break;
                 default:

@@ -5,15 +5,8 @@
     "Complexity": "easy",
     "LinkToPhoto": "url",
     "MethodOfPreparation": "bake",
-    "Kcal": 420,
-    "RecipesTags": [
-      0,
-      2
-    ],
-    "RecipesCategories": [
-      0,
-      1
-    ]
+    "Kcal": 420
+    
   },
   {
     "Name": "Chicken with zuccini",
@@ -21,22 +14,7 @@
     "Complexity": "difficult",
     "LinkToPhoto": "url",
     "MethodOfPreparation": "roast",
-    "Kcal": 69,
-    "Ingredients": [
-      {
-        "2": 3
-      },
-      {
-        "3": 3
-      }
-    ],
-    "RecipesTags": [
-      0,
-      1
-    ],
-    "RecipesCategories": [
-      2,
-      3
-    ]
+    "Kcal": 69
+
   }
 ]
