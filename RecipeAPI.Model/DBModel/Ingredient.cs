@@ -16,5 +16,7 @@
             Carbohydrates = carbohydrates;
             Fat = fat;
         }
+
+        public Ingredient() { }
     }
 }

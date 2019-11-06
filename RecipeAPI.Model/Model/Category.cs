@@ -14,5 +14,7 @@
         {
             Name = name;
         }
+
+        public Category() { }
     }
 }

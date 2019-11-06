@@ -10,5 +10,7 @@
             Id = id;
             Name = name;
         }
+
+        public Tag() { }
     }
 }

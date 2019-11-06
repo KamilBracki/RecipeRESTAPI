@@ -25,5 +25,7 @@ namespace RecipeAPI.Model.DBModel
             MethodOfPreparation = methodOfPreparation;
             Kcal = kcal;
         }
+
+        public Recipe() { }
     }
 }
