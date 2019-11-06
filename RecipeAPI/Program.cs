@@ -7,15 +7,7 @@ namespace RecipeAPI
     {
         public static void Main(string[] args)
         {
-            /*using (var context = new RecipeDataContext())
-            {
-                var tag = new Tag
-                {
-                    Name = "No KEY annotationt" 
-                };
-                context.Tags.Add(tag);
-                context.SaveChanges();
-            }*/
+
             CreateWebHostBuilder(args).Build().Run();
         }
 
