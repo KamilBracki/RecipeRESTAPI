@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RecipeAPI.AccessLayer.EntityConfiguration;
 using RecipeAPI.Model.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace RecipeAPI.AccessLayer
 {
@@ -33,7 +30,7 @@ namespace RecipeAPI.AccessLayer
         public virtual DbSet<Tag> Tags { get; set; }
 
 
-        
+
     }
 
 }
