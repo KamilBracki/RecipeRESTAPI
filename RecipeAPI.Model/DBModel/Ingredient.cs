@@ -11,7 +11,8 @@ namespace RecipeAPI.Model.DBModel
         public double Carbohydrates { get; set; }
         public double Fat { get; set; }
 
-        public IList<RecipeIngredient> RecipeIngredient { get; set; }
+        public IList<RecipeIngredient> RecipeIngredients { get; set; }
+
 
         public Ingredient(int id, string name, double proteins, double carbohydrates, double fat)
         {

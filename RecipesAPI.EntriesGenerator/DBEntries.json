@@ -1,0 +1,156 @@
+ {
+    "Recipes": 
+    [
+      {
+        "Name": "Chicken with carrot",
+        "PreparationTime": 30,
+        "Complexity": "easy",
+        "LinkToPhoto": "url",
+        "MethodOfPreparation": "bake",
+        "Kcal": 420,
+        "RecipeTags": [
+          {
+            "Tag": {
+              "Name": "Lowfat"
+            }
+          },
+          {
+            "Tag": {
+              "Name": "Chicken"
+            }
+          }
+        ],
+        "RecipeCategories": [
+
+          {
+            "Category": {
+              "Name": "Meat"
+            }
+          },
+          {
+            "Category": {
+              "Name": "Main course"
+            }
+          }
+        ],
+          
+        "RecipeIngredients": [
+          {
+            "Ingredient": {
+              "Name": "Chicken breast"
+            },
+            "Weight": 10
+
+          },
+          {
+            "Ingredient": {
+              "Name": "Carrot"
+            },
+            "Weight": 20
+
+          }
+
+        ]
+
+      },
+      {
+        "Name": "Chicken with zuccini",
+        "PreparationTime": 60,
+        "Complexity": "difficult",
+        "LinkToPhoto": "url",
+        "MethodOfPreparation": "roast",
+        "Kcal": 69,
+        "RecipeTags": [
+          {
+            "Tag": {
+              "Name": "Lowfat"
+            }
+          },
+          {
+            "Tag": {
+              "Name": "Dessert"
+            }
+          }
+        ],
+        "RecipeCategories": [
+
+          {
+            "Category": {
+              "Name": "Soup"
+            }
+          },
+          {
+            "Category": {
+              "Name": "Main course"
+            }
+          }
+        ],
+
+        "RecipeIngredients": [
+          {
+            "Ingredient": {
+              "Name": "Chicken breast"
+            },
+            "Weight": 110
+
+          },
+          {
+            "Ingredient": {
+              "Name": "Zucchini"
+            },
+            "Weight": 30
+
+          }
+
+        ]
+
+      }
+    ],
+    "Ingredients": 
+    [
+      {
+        "Name": "Egg",
+        "Proteins": 13,
+        "Carbohydrates": 1.1,
+        "Fat": 11
+      },
+      {
+        "Name": "Carrot",
+        "Proteins": 0.9,
+        "Carbohydrates": 10,
+        "Fat": 0.2
+      },
+      {
+        "Name": "Zucchini",
+        "Proteins": 1.2,
+        "Carbohydrates": 3.1,
+        "Fat": 0.3
+      },
+      {
+        "Name": "Chicken breast",
+        "Proteins": 31,
+        "Carbohydrates": 0,
+        "Fat": 3.6
+      }
+
+    ],
+    "Categories": 
+    [
+      { "Name": "Soup" },
+      { "Name": "Fish" },
+      { "Name": "Dessert" },
+      { "Name": "Main course" },
+      { "Name": "Meat" }
+    ],
+    "Tags":
+    [
+      { "Name": "Vegan" },
+      { "Name": "Lowfat" },
+      { "Name": "Dessert" },
+      { "Name": "Chicken"}
+    ]
+
+
+  }
+
+

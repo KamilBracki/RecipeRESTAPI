@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RecipeAPI.Model.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace RecipeAPI.AccessLayer.EntityConfiguration
 {
@@ -15,6 +12,9 @@ namespace RecipeAPI.AccessLayer.EntityConfiguration
             builder
                 .Property(i => i.Id)
                 .ValueGeneratedOnAdd();
+            /*            builder
+                            .HasIndex(n => n.Name)
+                            .IsUnique();*/
         }
     }
 }

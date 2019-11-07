@@ -26,7 +26,7 @@ namespace RecipeAPI.AccessLayer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-       
+
             modelBuilder.ApplyConfiguration(new TagEntityConfiguration());
             modelBuilder.ApplyConfiguration(new RecipeEntityConfiguration());
             modelBuilder.ApplyConfiguration(new IngredientEntityConfiguration());
@@ -34,8 +34,6 @@ namespace RecipeAPI.AccessLayer
             modelBuilder.ApplyConfiguration(new RecipeCategoryEntityConfiguration());
             modelBuilder.ApplyConfiguration(new RecipeIngredientEntityConfiguration());
             modelBuilder.ApplyConfiguration(new RecipeTagEntityConfiguration());
-            modelBuilder.Entity<RecipeCategory>().Ignore(t => t.Recipe);
-
 
 
         }
@@ -44,7 +42,7 @@ namespace RecipeAPI.AccessLayer
         public virtual DbSet<Recipe> Recipes { get; set; }
         public virtual DbSet<Ingredient> Ingredients { get; set; }
         public virtual DbSet<RecipeCategory> RecipeCategories { get; set; }
-        public virtual DbSet<RecipeIngredient> RecipeIngredients{ get; set; }
+        public virtual DbSet<RecipeIngredient> RecipeIngredients { get; set; }
         public virtual DbSet<RecipeTag> RecipeTags { get; set; }
 
 

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeAPI", "RecipeAPI\Reci
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeAPI.AccessLayer", "RecipeAPI.AccessLayer\RecipeAPI.AccessLayer.csproj", "{D6575F40-52F2-4B74-9CCA-87F1EE6664BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipesAPI.EntriesGenerator", "RecipesAPI.EntriesGenerator\RecipesAPI.EntriesGenerator.csproj", "{25149897-DA95-4648-BD6F-B31A0412D71F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeAPI.EntriesGenerator", "RecipesAPI.EntriesGenerator\RecipeAPI.EntriesGenerator.csproj", "{25149897-DA95-4648-BD6F-B31A0412D71F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeAPI.Model", "RecipeAPI.Model\RecipeAPI.Model.csproj", "{55FCBF3E-9943-4474-B7CC-D9CBD8BBDCDD}"
 EndProject

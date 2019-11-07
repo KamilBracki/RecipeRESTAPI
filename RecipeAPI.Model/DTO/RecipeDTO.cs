@@ -14,8 +14,7 @@ namespace RecipeAPI.Model.DTO
         public List<int> TagsId { get; set; }
         public List<int> CategoriesId { get; set; }
         public List<int> Ingredients { get; set; }
-        //public List<int> IngredientsId; //TODO dictionary?
-        //public Dictionary<int, double> Ingredients { get; set; }
+
 
     }
 }

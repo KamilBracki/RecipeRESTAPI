@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RecipeAPI.Model.JoiningModel;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace RecipeAPI.AccessLayer.EntityConfiguration
 {
@@ -19,10 +16,10 @@ namespace RecipeAPI.AccessLayer.EntityConfiguration
 
             builder
                 .HasOne(r => r.Recipe)
-                .WithMany(rc => rc.RecipesCategories)
+                .WithMany(rc => rc.RecipeCategories)
                 .HasForeignKey(r => r.RecipeId);
 
-            
+
         }
 
     }

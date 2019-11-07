@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using RecipeAPI.AccessLayer;
-using RecipeAPI.Model.Model;
 
 namespace RecipeAPI
 {
@@ -9,6 +7,7 @@ namespace RecipeAPI
     {
         public static void Main(string[] args)
         {
+
             CreateWebHostBuilder(args).Build().Run();
         }
 
