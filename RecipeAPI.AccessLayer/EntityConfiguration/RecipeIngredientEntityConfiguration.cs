@@ -27,7 +27,7 @@ namespace RecipeAPI.AccessLayer.EntityConfiguration
 
             builder
                 .HasOne(i => i.Ingredient)
-                .WithMany(rc => rc.RecipeIngredient)
+                .WithMany(rc => rc.RecipeIngredients)
                 .HasForeignKey(r => r.IngredientId);
 
 
