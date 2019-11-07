@@ -13,6 +13,7 @@ namespace RecipeAPI.Model.DBModel
 
         public IList<RecipeIngredient> RecipeIngredients { get; set; }
 
+
         public Ingredient(int id, string name, double proteins, double carbohydrates, double fat)
         {
             Id = id;

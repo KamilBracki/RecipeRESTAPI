@@ -16,6 +16,7 @@ namespace RecipeAPI.AccessLayer
 
         public RecipeDataContext()
         {
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -8,11 +8,14 @@ namespace RecipeAPI.AccessLayer.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<RecipeIngredient> builder)
         {
+
             builder.HasKey(k => new { k.RecipeId, k.IngredientId });
+
             builder.Property(i => i.Id).ValueGeneratedOnAdd();
 
             builder
                 .HasOne(r => r.Recipe)
+
                 .WithMany(rc => rc.RecipeIngredients)
                 .HasForeignKey(r => r.RecipeId);
 
@@ -20,6 +23,13 @@ namespace RecipeAPI.AccessLayer.EntityConfiguration
                 .HasOne(i => i.Ingredient)
                 .WithMany(rc => rc.RecipeIngredients)
                 .HasForeignKey(r => r.IngredientId);
+
+
+            builder
+                .HasOne(i => i.Ingredient)
+                .WithMany(rc => rc.RecipeIngredient)
+                .HasForeignKey(r => r.IngredientId);
+
 
         }
     }
