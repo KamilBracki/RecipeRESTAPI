@@ -26,7 +26,7 @@ namespace RecipeAPI.Controllers
             _context = context;
         }
 
-        // GET api/values
+        // GET api/Ingredient
         [HttpGet]
         public async Task<ActionResult<IEnumerable<IngredientDTO>>> GetIngredients()
         {
@@ -42,11 +42,27 @@ namespace RecipeAPI.Controllers
             }).ToListAsync();
         }
 
-        // GET api/values/5
+        // GET api/Ingredient/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public async Task<ActionResult<IngredientDTO>> GetIngredientById(int id)
         {
-            return "value";
+            var IngredientDTO = await _context.Ingredients.Where(x => x.Id == id).Select(x => new IngredientDTO
+            {
+
+                Id = x.Id,
+                Name = x.Name,
+                Proteins = x.Proteins,
+                Carbohydrates = x.Carbohydrates,
+                Fat = x.Fat
+            }).FirstOrDefaultAsync();
+
+            if (IngredientDTO == null)
+            {
+                return NotFound();
+            }
+
+
+            return IngredientDTO;
         }
 
         // POST api/values
