@@ -3,18 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using RecipeAPI.AccessLayer;
+using RecipeAPI.Model.DTO;
 
 namespace RecipeAPI.Controllers
 {
+
+
+    
+
+
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class IngredientController : ControllerBase
     {
+
+        private RecipeDataContext _context;
+
+        public IngredientController(RecipeDataContext context)
+        {
+            _context = context;
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<ActionResult<IEnumerable<IngredientDTO>>> GetIngredients()
         {
-            return new string[] { "value1", "value2" };
+
+            return await  _context.Ingredients.Select(x => new IngredientDTO
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Proteins = x.Proteins,
+                Carbohydrates = x.Carbohydrates,
+                Fat = x.Fat
+
+            }).ToListAsync();
         }
 
         // GET api/values/5

@@ -16,6 +16,7 @@ namespace RecipeAPI.AccessLayer
 
         public RecipeDataContext()
         {
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -34,8 +35,7 @@ namespace RecipeAPI.AccessLayer
             modelBuilder.ApplyConfiguration(new RecipeIngredientEntityConfiguration());
             modelBuilder.ApplyConfiguration(new RecipeTagEntityConfiguration());
             modelBuilder.Entity<RecipeCategory>().Ignore(t => t.Recipe);
-            modelBuilder.Entity<RecipeIngredient>().Ignore(t => t.Ingredient);
-            modelBuilder.Entity<Recipe>().Ignore(t => t.RecipeIngredientsId);
+
 
 
         }

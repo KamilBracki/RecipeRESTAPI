@@ -16,7 +16,7 @@ namespace RecipeAPI.Model.DBModel
         public IList<RecipeTag> RecipesTags { get; set; }
         public IList<RecipeCategory> RecipesCategories { get; set; }
         
-        public IList<RecipeIngredient> RecipeIngredientsId { get; set; }
+        public IList<RecipeIngredient> RecipeIngredient { get; set; }
 
         public Recipe(int id, string name, int preparationTime, string complexity, string linkToPhoto, string methodOfPreparation, double kcal)
         {
