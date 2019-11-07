@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RecipeAPI.AccessLayer;
 using RecipeAPI.Model.DTO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace RecipeAPI.Controllers
 {
 
 
-    
+
 
 
     [Route("api/[controller]")]
@@ -19,7 +18,7 @@ namespace RecipeAPI.Controllers
     public class IngredientController : ControllerBase
     {
 
-        private RecipeDataContext _context;
+        private readonly RecipeDataContext _context;
 
         public IngredientController(RecipeDataContext context)
         {
@@ -31,7 +30,7 @@ namespace RecipeAPI.Controllers
         public async Task<ActionResult<IEnumerable<IngredientDTO>>> GetIngredients()
         {
 
-            return await  _context.Ingredients.Select(x => new IngredientDTO
+            return await _context.Ingredients.Select(x => new IngredientDTO
             {
                 Id = x.Id,
                 Name = x.Name,
@@ -65,8 +64,8 @@ namespace RecipeAPI.Controllers
             return IngredientDTO;
         }
 
-        [HttpGet("{name}")]
-        public async Task<ActionResult<IngredientDTO>> GetIngredientById(string name)
+        [HttpGet("{name:alpha}")]
+        public async Task<ActionResult<IngredientDTO>> GetIngredientByName(string name)
         {
             var IngredientDTO = await _context.Ingredients.Where(x => x.Name == name).Select(x => new IngredientDTO
             {
