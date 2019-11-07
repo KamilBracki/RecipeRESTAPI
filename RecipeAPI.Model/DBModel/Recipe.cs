@@ -1,5 +1,6 @@
 ﻿using RecipeAPI.Model.JoiningModel;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RecipeAPI.Model.DBModel
 {
@@ -14,6 +15,8 @@ namespace RecipeAPI.Model.DBModel
         public double Kcal { get; set; }
         public IList<RecipeTag> RecipesTags { get; set; }
         public IList<RecipeCategory> RecipesCategories { get; set; }
+        
+        public IList<RecipeIngredient> RecipeIngredient { get; set; }
 
         public Recipe(int id, string name, int preparationTime, string complexity, string linkToPhoto, string methodOfPreparation, double kcal)
         {

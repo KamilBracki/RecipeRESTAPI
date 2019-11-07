@@ -1,6 +1,6 @@
 ﻿namespace RecipeAPI.Model.Model
 {
-    public class Ingredient
+    public class IngredientBuilder
     {
         public int Id { get; private set; }
         public string Name { get; set; }
@@ -10,7 +10,7 @@
 
 
 
-        public Ingredient(Builder builder)
+        public IngredientBuilder(Builder builder)
         {
             Id = builder.Id;
             Name = builder.Name;
@@ -58,9 +58,9 @@
             }
 
 
-            public Ingredient Build()
+            public IngredientBuilder Build()
             {
-                return new Ingredient(this);
+                return new IngredientBuilder(this);
             }
         }
     }

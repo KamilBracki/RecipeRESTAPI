@@ -1,4 +1,7 @@
-﻿namespace RecipeAPI.Model.DBModel
+﻿using RecipeAPI.Model.JoiningModel;
+using System.Collections.Generic;
+
+namespace RecipeAPI.Model.DBModel
 {
     public class Ingredient
     {
@@ -7,6 +10,8 @@
         public double Proteins { get; set; }
         public double Carbohydrates { get; set; }
         public double Fat { get; set; }
+
+        public IList<RecipeIngredient> RecipeIngredient { get; set; }
 
         public Ingredient(int id, string name, double proteins, double carbohydrates, double fat)
         {

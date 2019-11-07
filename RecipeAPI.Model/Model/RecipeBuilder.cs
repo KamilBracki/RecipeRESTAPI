@@ -3,7 +3,7 @@
 namespace RecipeAPI.Model.Model
 {
 
-    public class Recipe
+    public class RecipeBuilder
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -17,7 +17,7 @@ namespace RecipeAPI.Model.Model
         public List<Category> Categories { get; set; }
 
 
-        public Recipe(Builder builder)
+        public RecipeBuilder(Builder builder)
         {
             Id = builder.Id;
             Name = builder.Name;
@@ -99,9 +99,9 @@ namespace RecipeAPI.Model.Model
                 return this;
             }
 
-            public Recipe Build()
+            public RecipeBuilder Build()
             {
-                return new Recipe(this);
+                return new RecipeBuilder(this);
             }
         }
 
