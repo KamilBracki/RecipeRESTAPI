@@ -65,6 +65,28 @@ namespace RecipeAPI.Controllers
             return IngredientDTO;
         }
 
+        [HttpGet("{name}")]
+        public async Task<ActionResult<IngredientDTO>> GetIngredientById(string name)
+        {
+            var IngredientDTO = await _context.Ingredients.Where(x => x.Name == name).Select(x => new IngredientDTO
+            {
+
+                Id = x.Id,
+                Name = x.Name,
+                Proteins = x.Proteins,
+                Carbohydrates = x.Carbohydrates,
+                Fat = x.Fat
+            }).FirstOrDefaultAsync();
+
+            if (IngredientDTO == null)
+            {
+                return NotFound();
+            }
+
+
+            return IngredientDTO;
+        }
+
         // POST api/values
         [HttpPost]
         public void Post([FromBody] string value)
