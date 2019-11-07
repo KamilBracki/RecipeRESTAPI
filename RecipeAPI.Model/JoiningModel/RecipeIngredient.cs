@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RecipeAPI.Model.JoiningModel
 {
@@ -11,7 +10,7 @@ namespace RecipeAPI.Model.JoiningModel
         public DBModel.Recipe Recipe { get; set; }
 
 
-        public int IngredientsId { get; set; }
+        public int IngredientId { get; set; }
         public DBModel.Ingredient Ingredient { get; set; }
         public double Weight { get; set; }
 
