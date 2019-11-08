@@ -21,15 +21,19 @@ namespace RecipeAPI.AccessLayer
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=tcp:recipesdb.database.windows.net,1433;Initial Catalog=recipesDB;Persist Security Info=False;User ID=recipesdb;Password=Codecool1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30");
+            optionsBuilder.UseSqlServer("Server=tcp:recipesdb.database.windows.net,1433;Initial Catalog=recipesDB;Persist Security Info=False;User ID=recipesdb;Password=Codecool1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30")
+                         .EnableSensitiveDataLogging();
+            ;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
             modelBuilder.ApplyConfiguration(new TagEntityConfiguration());
-            modelBuilder.ApplyConfiguration(new RecipeEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryEntityConfiguration());
             modelBuilder.ApplyConfiguration(new IngredientEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new RecipeEntityConfiguration());
+
 
             modelBuilder.ApplyConfiguration(new RecipeCategoryEntityConfiguration());
             modelBuilder.ApplyConfiguration(new RecipeIngredientEntityConfiguration());

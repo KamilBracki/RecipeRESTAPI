@@ -1,9 +1,9 @@
 ﻿using Nancy.Json;
 using RecipeAPI.AccessLayer;
-using RecipeAPI.Model.JoiningModel;
 using RecipeAPI.Model.Model;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using DBIngredient = RecipeAPI.Model.DBModel.Ingredient;
 using DBRecipe = RecipeAPI.Model.DBModel.Recipe;
 
@@ -20,11 +20,19 @@ namespace RecipeAPI.EntriesGenerator
         public void Run()
         {
             GenerateObjects();
-
-            _context.SaveChanges();
-
-
         }
+
+        private void DistictTags()
+        {
+            var names = _context.Tags.Select(x => x.Name).Distinct().ToList();
+
+            List<Tag> list = names.Select(x => new Tag { Name = x }).ToList();
+
+
+            _context.Tags.RemoveRange();
+            _context.Tags.AddRange(list);
+        }
+
 
         class JsonObject
         {
@@ -49,9 +57,13 @@ namespace RecipeAPI.EntriesGenerator
             var recipes = objects.Recipes;
 
             PopulateDB(categories);
+
             PopulateDB(tags);
+
             PopulateDB(ingredients);
+            _context.SaveChanges();
             PopulateDB(recipes);
+            _context.SaveChanges();
 
 
         }
@@ -73,15 +85,7 @@ namespace RecipeAPI.EntriesGenerator
                 case List<DBRecipe> list:
                     _context.Recipes.AddRange(list);
                     break;
-                case List<RecipeIngredient> list:
-                    _context.RecipeIngredients.AddRange(list);
-                    break;
-                case List<RecipeCategory> list:
-                    _context.RecipeCategories.AddRange(list);
-                    break;
-                case List<RecipeTag> list:
-                    _context.RecipeTags.AddRange(list);
-                    break;
+
                 default:
                     break;
             }

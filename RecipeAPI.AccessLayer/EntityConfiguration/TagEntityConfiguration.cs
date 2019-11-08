@@ -12,9 +12,6 @@ namespace RecipeAPI.AccessLayer.EntityConfiguration
             builder
                 .Property(i => i.Id)
                 .ValueGeneratedOnAdd();
-            /*            builder
-                            .HasIndex(n => n.Name)
-                            .IsUnique();*/
         }
     }
 }

@@ -34,7 +34,7 @@ namespace RecipeAPI
                 var context = serviceScope.ServiceProvider.GetRequiredService<RecipeDataContext>();
                 if (context.Database.EnsureCreated())
                 {
-                    DBFiller dBFiller = new DBFiller(context);
+                    var dBFiller = new DBFiller(context);
                     dBFiller.Run();
                 }
             }

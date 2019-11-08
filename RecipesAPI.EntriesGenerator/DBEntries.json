@@ -11,12 +11,12 @@
         "RecipeTags": [
           {
             "Tag": {
-              "Name": "Lowfat"
+              "Id": 1
             }
           },
           {
             "Tag": {
-              "Name": "Chicken"
+              "Id": 2
             }
           }
         ],
@@ -24,12 +24,12 @@
 
           {
             "Category": {
-              "Name": "Meat"
+              "Id": 1
             }
           },
           {
             "Category": {
-              "Name": "Main course"
+              "Id": 1
             }
           }
         ],
@@ -37,14 +37,14 @@
         "RecipeIngredients": [
           {
             "Ingredient": {
-              "Name": "Chicken breast"
+              "Id": 3
             },
             "Weight": 10
 
           },
           {
             "Ingredient": {
-              "Name": "Carrot"
+              "Id": 2
             },
             "Weight": 20
 
@@ -63,40 +63,38 @@
         "RecipeTags": [
           {
             "Tag": {
-              "Name": "Lowfat"
+              "Id": 1
             }
           },
           {
             "Tag": {
-              "Name": "Dessert"
+              "Id": 3
             }
           }
         ],
         "RecipeCategories": [
-
           {
             "Category": {
-              "Name": "Soup"
+              "Id": 1
             }
           },
           {
             "Category": {
-              "Name": "Main course"
+              "Id": 2
             }
           }
         ],
-
         "RecipeIngredients": [
           {
             "Ingredient": {
-              "Name": "Chicken breast"
+              "Id": 3
             },
             "Weight": 110
 
           },
           {
             "Ingredient": {
-              "Name": "Zucchini"
+              "Id": 2
             },
             "Weight": 30
 
@@ -132,7 +130,6 @@
         "Carbohydrates": 0,
         "Fat": 3.6
       }
-
     ],
     "Categories": 
     [
