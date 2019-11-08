@@ -10,12 +10,10 @@ namespace RecipeAPI.AccessLayer.EntityConfiguration
         {
 
             builder.HasKey(k => new { k.RecipeId, k.IngredientId });
-
             builder.Property(i => i.Id).ValueGeneratedOnAdd();
 
             builder
                 .HasOne(r => r.Recipe)
-
                 .WithMany(rc => rc.RecipeIngredients)
                 .HasForeignKey(r => r.RecipeId);
 
@@ -25,10 +23,6 @@ namespace RecipeAPI.AccessLayer.EntityConfiguration
                 .HasForeignKey(r => r.IngredientId);
 
 
-            builder
-                .HasOne(i => i.Ingredient)
-                .WithMany(rc => rc.RecipeIngredients)
-                .HasForeignKey(r => r.IngredientId);
 
 
         }
