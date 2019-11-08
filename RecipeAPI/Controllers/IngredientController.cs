@@ -5,13 +5,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RecipeAPI.AccessLayer;
+using RecipeAPI.Model.DBModel;
 using RecipeAPI.Model.DTO;
 
 namespace RecipeAPI.Controllers
 {
 
 
-    
+
 
 
     [Route("api/[controller]")]
@@ -31,7 +32,7 @@ namespace RecipeAPI.Controllers
         public async Task<ActionResult<IEnumerable<IngredientDTO>>> GetIngredients()
         {
 
-            return await  _context.Ingredients.Select(x => new IngredientDTO
+            return await _context.Ingredients.Select(x => new IngredientDTO
             {
                 Id = x.Id,
                 Name = x.Name,
@@ -65,8 +66,8 @@ namespace RecipeAPI.Controllers
             return IngredientDTO;
         }
 
-        [HttpGet("{name}")]
-        public async Task<ActionResult<IngredientDTO>> GetIngredientById(string name)
+        [HttpGet("{name:alpha}")]
+        public async Task<ActionResult<IngredientDTO>> GetIngredientByName(string name)
         {
             var IngredientDTO = await _context.Ingredients.Where(x => x.Name == name).Select(x => new IngredientDTO
             {
@@ -76,6 +77,7 @@ namespace RecipeAPI.Controllers
                 Proteins = x.Proteins,
                 Carbohydrates = x.Carbohydrates,
                 Fat = x.Fat
+
             }).FirstOrDefaultAsync();
 
             if (IngredientDTO == null)
@@ -89,20 +91,87 @@ namespace RecipeAPI.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async void Post([FromBody] IngredientDTO ingredient)
         {
+            var NewIngredient = new Ingredient
+            {
+                Name = ingredient.Name,
+                Proteins = ingredient.Proteins,
+                Carbohydrates = ingredient.Carbohydrates,
+                Fat = ingredient.Fat
+            };
+
+            using(var ctxt = new RecipeDataContext()) // ask mentor about multiple instances at every method or one at field ( butt geeting disops error)
+            {
+                ctxt.Ingredients.Add(NewIngredient);
+                await ctxt.SaveChangesAsync();
+            }
+
         }
 
-        // PUT api/values/5
+        /*
+          
+      {
+        "Name": "Tomato",
+        "Proteins": 0.2,
+        "Carbohydrates": 8,
+        "Fat": 0.1
+      }
+      */
+    // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("deleteId/{id:int}")]
+        public async Task<IActionResult> DeleteIngredientById(int id)
         {
+
+            var Ingredient = _context.Ingredients.Find(id);
+
+            using( var context = new RecipeDataContext())
+            {
+                if(Ingredient == null)
+                {
+                    return NotFound();
+                };
+            
+                context.Ingredients.Remove(Ingredient);
+                await context.SaveChangesAsync();
+            };
+            return NoContent();
+        }
+        // DELETE api/values/
+        [HttpDelete("deleteName/{name:alpha}")]
+        public async Task<IActionResult> DeleteIngredientByName(string name)
+        {
+
+
+
+            //var ing = _context.Ingredients.Find(Ingredient);
+
+            using (var context = new RecipeDataContext())
+            {
+                var Ingredient = context.Ingredients.Where(x => x.Name == name).Select(x => new Ingredient
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Proteins = x.Proteins,
+                    Carbohydrates = x.Carbohydrates,
+                    Fat = x.Fat
+                }).FirstOrDefault();
+
+                if (Ingredient == null)
+                {
+                    return NotFound();
+                };
+
+                context.Ingredients.Remove(Ingredient);
+                await context.SaveChangesAsync();
+            };
+            return NoContent();
         }
     }
 }
