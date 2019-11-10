@@ -118,11 +118,36 @@ namespace RecipeAPI.Controllers
         "Fat": 0.1
       }
       */
-    // PUT api/values/5
+        // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> PutIngredient(int id, [FromBody] Ingredient ingredient)
         {
+            if (id != ingredient.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(ingredient).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!IngredientExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
         }
+
 
         // DELETE api/values/5
         [HttpDelete("deleteId/{id:int}")]
@@ -172,6 +197,10 @@ namespace RecipeAPI.Controllers
                 await context.SaveChangesAsync();
             };
             return NoContent();
+        }
+        private bool IngredientExists(int id)
+        {
+            return _context.Ingredients.Any(e => e.Id == id);
         }
     }
 }
