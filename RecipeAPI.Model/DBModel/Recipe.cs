@@ -7,9 +7,10 @@ namespace RecipeAPI.Model.DBModel
     public class Recipe
     {
         public int Id { get; set; }
+        public int AuthorId { get; set; }
         public string Name { get; set; }
         public int PreparationTime { get; set; }
-        public string Complexity { get; set; }
+        public string Description { get; set; }
         public string LinkToPhoto { get; set; }
         public string MethodOfPreparation { get; set; }
         public double Kcal { get; set; }
@@ -19,12 +20,13 @@ namespace RecipeAPI.Model.DBModel
         public IList<RecipeIngredient> RecipeIngredients { get; set; }
 
 
-        public Recipe(int id, string name, int preparationTime, string complexity, string linkToPhoto, string methodOfPreparation, double kcal)
+        public Recipe(int id, int authorId, string name, int preparationTime, string description, string linkToPhoto, string methodOfPreparation, double kcal)
         {
             Id = id;
+            AuthorId = authorId;
             Name = name;
             PreparationTime = preparationTime;
-            Complexity = complexity;
+            Description = description;
             LinkToPhoto = linkToPhoto;
             MethodOfPreparation = methodOfPreparation;
             Kcal = kcal;

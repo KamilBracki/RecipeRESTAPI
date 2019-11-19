@@ -2,9 +2,10 @@
     "Recipes": 
     [
       {
+        "AuthorId" :  1,
         "Name": "Chicken with carrot",
         "PreparationTime": 30,
-        "Complexity": "easy",
+        "Description": "1. Roast 2. A toast",
         "LinkToPhoto": "url",
         "MethodOfPreparation": "bake",
         "Kcal": 420,
@@ -33,7 +34,7 @@
             }
           }
         ],
-          
+
         "RecipeIngredients": [
           {
             "Ingredient": {
@@ -54,9 +55,10 @@
 
       },
       {
+        "AuthorId": 2,
         "Name": "Chicken with zuccini",
         "PreparationTime": 60,
-        "Complexity": "difficult",
+        "Description": "1. Bake 2. A cake",
         "LinkToPhoto": "url",
         "MethodOfPreparation": "roast",
         "Kcal": 69,

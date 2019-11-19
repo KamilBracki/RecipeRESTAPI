@@ -8,7 +8,7 @@ namespace RecipeAPI.Model.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public int PreparationTime { get; set; }
-        public string Complexity { get; set; } /* to improve */
+        public string Description { get; set; } /* to improve */
         public string LinkToPhoto { get; set; }
         public string MethodOfPreparation { get; set; }
         public double Kcal { get; set; }
@@ -22,7 +22,7 @@ namespace RecipeAPI.Model.Model
             Id = builder.Id;
             Name = builder.Name;
             PreparationTime = builder.PreparationTime;
-            Complexity = builder.Complexity;
+            Description = builder.Description;
             LinkToPhoto = builder.LinkToPhoto;
             MethodOfPreparation = builder.MethodOfPreparation;
             Ingredients = builder.Ingredients;
@@ -33,9 +33,10 @@ namespace RecipeAPI.Model.Model
         public class Builder
         {
             public int Id;
+            public int AuthorId;
             public string Name;
             public int PreparationTime;
-            public string Complexity;
+            public string Description;
             public string LinkToPhoto;
             public string MethodOfPreparation;
             public double Kcal;
@@ -47,6 +48,11 @@ namespace RecipeAPI.Model.Model
             public Builder WithId(int id)
             {
                 Id = id;
+                return this;
+            }
+            public Builder WithAuthorId(int authorId)
+            {
+                AuthorId = authorId;
                 return this;
             }
             public Builder WithName(string name)
@@ -61,9 +67,9 @@ namespace RecipeAPI.Model.Model
                 return this;
             }
 
-            public Builder WithComplexity(string complexity)
+            public Builder WithDescription(string description)
             {
-                Complexity = complexity;
+                Description = description;
                 return this;
             }
 
