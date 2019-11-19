@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using RecipeAPI.AccessLayer.EntityConfiguration;
 using RecipeAPI.Model.DBModel;
 using RecipeAPI.Model.JoiningModel;
 using RecipeAPI.Model.Model;
+using System;
 
 namespace RecipeAPI.AccessLayer
 {
@@ -21,9 +23,16 @@ namespace RecipeAPI.AccessLayer
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=tcp:recipesdb.database.windows.net,1433;Initial Catalog=recipesDB;Persist Security Info=False;User ID=recipesdb;Password=Codecool1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30")
-                         .EnableSensitiveDataLogging();
-            ;
+
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json")
+                .Build();
+            optionsBuilder
+                .UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+                .EnableSensitiveDataLogging();
+
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
