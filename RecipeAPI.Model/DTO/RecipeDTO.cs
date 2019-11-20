@@ -8,7 +8,7 @@ namespace RecipeAPI.Model.DTO
         public int AuthorId { get; set; }
         public string Name { get; set; }
         public int PreparationTime { get; set; }
-        public string Description { get; set; } /* to improve */
+        public string Description { get; set; } 
         public string LinkToPhoto { get; set; }
         public string MethodOfPreparation { get; set; }
         public double Kcal { get; set; }
