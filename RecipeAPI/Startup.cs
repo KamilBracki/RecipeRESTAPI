@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using RecipeAPI.AccessLayer;
 using RecipeAPI.EntriesGenerator;
 
+
+
 namespace RecipeAPI
 {
     public class Startup
@@ -23,12 +25,16 @@ namespace RecipeAPI
         {
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddDbContext<RecipeDataContext>(context => context.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<RecipeDataContext>(context => context
+            .UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetRequiredService<RecipeDataContext>();
@@ -38,6 +44,9 @@ namespace RecipeAPI
                     dBFiller.Run();
                 }
             }
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             if (env.IsDevelopment())
             {

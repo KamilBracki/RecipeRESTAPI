@@ -44,7 +44,7 @@ namespace RecipeAPI.Controllers
 
         // PUT: api/Recipes/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRecipe(int id,[FromBody] Recipe recipe)
+        public async Task<IActionResult> PutRecipe(int id, Recipe recipe)
         {
             if (id != recipe.Id)
             {
@@ -74,7 +74,7 @@ namespace RecipeAPI.Controllers
 
         // POST: api/Recipes
         [HttpPost]
-        public async Task<ActionResult<Recipe>> PostRecipe([FromBody]Recipe recipe)
+        public async Task<ActionResult<Recipe>> PostRecipe(Recipe recipe)
         {
             _context.Recipes.Add(recipe);
             await _context.SaveChangesAsync();
