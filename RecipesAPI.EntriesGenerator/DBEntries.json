@@ -1,0 +1,155 @@
+ {
+    "Recipes": 
+    [
+      {
+        "AuthorId" :  1,
+        "Name": "Chicken with carrot",
+        "PreparationTime": 30,
+        "Description": "1. Roast 2. A toast",
+        "LinkToPhoto": "url",
+        "MethodOfPreparation": "bake",
+        "Kcal": 420,
+        "RecipeTags": [
+          {
+            "Tag": {
+              "Id": 1
+            }
+          },
+          {
+            "Tag": {
+              "Id": 2
+            }
+          }
+        ],
+        "RecipeCategories": [
+
+          {
+            "Category": {
+              "Id": 1
+            }
+          },
+          {
+            "Category": {
+              "Id": 1
+            }
+          }
+        ],
+
+        "RecipeIngredients": [
+          {
+            "Ingredient": {
+              "Id": 3
+            },
+            "Weight": 10
+
+          },
+          {
+            "Ingredient": {
+              "Id": 2
+            },
+            "Weight": 20
+
+          }
+
+        ]
+
+      },
+      {
+        "AuthorId": 2,
+        "Name": "Chicken with zuccini",
+        "PreparationTime": 60,
+        "Description": "1. Bake 2. A cake",
+        "LinkToPhoto": "url",
+        "MethodOfPreparation": "roast",
+        "Kcal": 69,
+        "RecipeTags": [
+          {
+            "Tag": {
+              "Id": 1
+            }
+          },
+          {
+            "Tag": {
+              "Id": 3
+            }
+          }
+        ],
+        "RecipeCategories": [
+          {
+            "Category": {
+              "Id": 1
+            }
+          },
+          {
+            "Category": {
+              "Id": 2
+            }
+          }
+        ],
+        "RecipeIngredients": [
+          {
+            "Ingredient": {
+              "Id": 3
+            },
+            "Weight": 110
+
+          },
+          {
+            "Ingredient": {
+              "Id": 2
+            },
+            "Weight": 30
+
+          }
+
+        ]
+
+      }
+    ],
+    "Ingredients": 
+    [
+      {
+        "Name": "Egg",
+        "Proteins": 13,
+        "Carbohydrates": 1.1,
+        "Fat": 11
+      },
+      {
+        "Name": "Carrot",
+        "Proteins": 0.9,
+        "Carbohydrates": 10,
+        "Fat": 0.2
+      },
+      {
+        "Name": "Zucchini",
+        "Proteins": 1.2,
+        "Carbohydrates": 3.1,
+        "Fat": 0.3
+      },
+      {
+        "Name": "Chicken breast",
+        "Proteins": 31,
+        "Carbohydrates": 0,
+        "Fat": 3.6
+      }
+    ],
+    "Categories": 
+    [
+      { "Name": "Soup" },
+      { "Name": "Fish" },
+      { "Name": "Dessert" },
+      { "Name": "Main course" },
+      { "Name": "Meat" }
+    ],
+    "Tags":
+    [
+      { "Name": "Vegan" },
+      { "Name": "Lowfat" },
+      { "Name": "Dessert" },
+      { "Name": "Chicken"}
+    ]
+
+
+  }
+
+
