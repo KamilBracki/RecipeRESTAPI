@@ -45,8 +45,8 @@ namespace RecipeAPI
                 }
             }
 
-            //app.UseOpenApi();
-            //app.UseSwaggerUi3();
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             if (env.IsDevelopment())
             {
