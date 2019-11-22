@@ -43,6 +43,7 @@ namespace RecipeAPI.EntriesGenerator
             var ingredients = objects.Ingredients;
             var recipes = objects.Recipes;
 
+            /*
             PopulateDB(categories);
 
             PopulateDB(tags);
@@ -51,12 +52,12 @@ namespace RecipeAPI.EntriesGenerator
             _context.SaveChanges();
             PopulateDB(recipes);
             _context.SaveChanges();
-
+            */
 
         }
 
 
-        private void PopulateDB<T>(List<T> collection)
+        /*private void PopulateDB<T>(List<T> collection)
         {
             switch (collection)
             {
@@ -77,7 +78,7 @@ namespace RecipeAPI.EntriesGenerator
                     break;
             }
         }
-
+        */
 
     }
 }
