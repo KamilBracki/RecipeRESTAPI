@@ -48,6 +48,9 @@ namespace RecipeAPI.AccessLayer
             modelBuilder.ApplyConfiguration(new RecipeIngredientEntityConfiguration());
             modelBuilder.ApplyConfiguration(new RecipeTagEntityConfiguration());
 
+            modelBuilder.ApplyConfiguration(new FavoriteRecipeEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new UserEntityConfiguration());
+
 
         }
         public virtual DbSet<Category> Categories { get; set; }
@@ -57,6 +60,9 @@ namespace RecipeAPI.AccessLayer
         public virtual DbSet<RecipeCategory> RecipeCategories { get; set; }
         public virtual DbSet<RecipeIngredient> RecipeIngredients { get; set; }
         public virtual DbSet<RecipeTag> RecipeTags { get; set; }
+
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<FavoriteRecipe> FavoriteRecipes { get; set; }
 
 
 
