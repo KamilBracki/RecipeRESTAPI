@@ -29,7 +29,7 @@ namespace RecipeAPI.AccessLayer
                 .AddJsonFile("appsettings.json")
                 .Build();
             optionsBuilder
-                .UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+                .UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
                 .EnableSensitiveDataLogging();
 
 

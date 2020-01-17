@@ -21,14 +21,14 @@ namespace RecipeAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Categories
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
         {
             return await _context.Categories.ToListAsync();
         }
 
-        // GET: api/Categories/5
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<Category>> GetCategory(int id)
         {
@@ -42,7 +42,7 @@ namespace RecipeAPI.Controllers
             return category;
         }
 
-        // PUT: api/Categories/5
+       
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCategory(int id, Category category)
         {
@@ -72,7 +72,7 @@ namespace RecipeAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Categories
+        
         [HttpPost]
         public async Task<ActionResult<Category>> PostCategory(Category category)
         {
@@ -82,7 +82,7 @@ namespace RecipeAPI.Controllers
             return CreatedAtAction("GetCategory", new { id = category.Id }, category);
         }
 
-        // DELETE: api/Categories/5
+        
         [HttpDelete("{id}")]
         public async Task<ActionResult<Category>> DeleteCategory(int id)
         {

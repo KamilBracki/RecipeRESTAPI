@@ -6,13 +6,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RecipeAPI.AccessLayer;
 using RecipeAPI.EntriesGenerator;
-
-
+using System;
 
 namespace RecipeAPI
 {
     public class Startup
     {
+
+        
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -23,10 +25,11 @@ namespace RecipeAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<RecipeDataContext>(context => context
-            .UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            .UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddSwaggerDocument();
         }

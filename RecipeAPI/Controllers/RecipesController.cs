@@ -21,14 +21,12 @@ namespace RecipeAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Recipes
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Recipe>>> GetRecipes()
         {
             return await _context.Recipes.ToListAsync();
         }
 
-        // GET: api/Recipes/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Recipe>> GetRecipe(int id)
         {
@@ -41,8 +39,6 @@ namespace RecipeAPI.Controllers
 
             return recipe;
         }
-
-        // PUT: api/Recipes/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutRecipe(int id, Recipe recipe)
         {
@@ -72,7 +68,7 @@ namespace RecipeAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Recipes
+
         [HttpPost]
         public async Task<ActionResult<Recipe>> PostRecipe(Recipe recipe)
         {
@@ -82,7 +78,6 @@ namespace RecipeAPI.Controllers
             return CreatedAtAction("GetRecipe", new { id = recipe.Id }, recipe);
         }
 
-        // DELETE: api/Recipes/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Recipe>> DeleteRecipe(int id)
         {

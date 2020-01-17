@@ -21,14 +21,14 @@ namespace RecipeAPI.Controllers
             _context = context;
         }
 
-        // GET: api/FavoriteRecipes
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FavoriteRecipe>>> GetFavoriteRecipes()
         {
             return await _context.FavoriteRecipes.ToListAsync();
         }
 
-        // GET: api/FavoriteRecipes/5
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<FavoriteRecipe>> GetFavoriteRecipe(int id)
         {
@@ -42,7 +42,7 @@ namespace RecipeAPI.Controllers
             return favoriteRecipe;
         }
 
-        // PUT: api/FavoriteRecipes/5
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutFavoriteRecipe(int id, FavoriteRecipe favoriteRecipe)
         {
@@ -72,7 +72,7 @@ namespace RecipeAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/FavoriteRecipes
+        
         [HttpPost]
         public async Task<ActionResult<FavoriteRecipe>> PostFavoriteRecipe(FavoriteRecipe favoriteRecipe)
         {
@@ -82,7 +82,7 @@ namespace RecipeAPI.Controllers
             return CreatedAtAction("GetFavoriteRecipe", new { id = favoriteRecipe.Id }, favoriteRecipe);
         }
 
-        // DELETE: api/FavoriteRecipes/5
+        
         [HttpDelete("{id}")]
         public async Task<ActionResult<FavoriteRecipe>> DeleteFavoriteRecipe(int id)
         {

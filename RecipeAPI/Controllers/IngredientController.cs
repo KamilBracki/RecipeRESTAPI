@@ -26,7 +26,7 @@ namespace RecipeAPI.Controllers
             _context = context;
         }
 
-        // GET api/Ingredient
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<IngredientDTO>>> GetIngredients()
         {
@@ -42,7 +42,7 @@ namespace RecipeAPI.Controllers
             }).ToListAsync();
         }
 
-        // GET api/Ingredient/5
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<IngredientDTO>> GetIngredientById(int id)
         {
@@ -88,7 +88,7 @@ namespace RecipeAPI.Controllers
             return IngredientDTO;
         }
 
-        // POST api/values
+        
         [HttpPost]
         public async void Post([FromBody] IngredientDTO ingredient)
         {
@@ -100,7 +100,7 @@ namespace RecipeAPI.Controllers
                 Fat = ingredient.Fat
             };
 
-            using(var ctxt = new RecipeDataContext()) // ask mentor about multiple instances at every method or one at field ( butt geeting disops error)
+            using(var ctxt = new RecipeDataContext()) 
             {
                 ctxt.Ingredients.Add(NewIngredient);
                 await ctxt.SaveChangesAsync();
@@ -108,16 +108,7 @@ namespace RecipeAPI.Controllers
 
         }
 
-        /*
-          
-      {
-        "Name": "Tomato",
-        "Proteins": 0.2,
-        "Carbohydrates": 8,
-        "Fat": 0.1
-      }
-      */
-        // PUT api/values/5
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutIngredient(int id, [FromBody] Ingredient ingredient)
         {
@@ -148,7 +139,6 @@ namespace RecipeAPI.Controllers
         }
 
 
-        // DELETE api/values/5
         [HttpDelete("deleteId/{id:int}")]
         public async Task<IActionResult> DeleteIngredientById(int id)
         {
@@ -167,14 +157,10 @@ namespace RecipeAPI.Controllers
             };
             return NoContent();
         }
-        // DELETE api/values/
+        
         [HttpDelete("deleteName/{name:alpha}")]
         public async Task<IActionResult> DeleteIngredientByName(string name)
         {
-
-
-
-            //var ing = _context.Ingredients.Find(Ingredient);
 
             using (var context = new RecipeDataContext())
             {

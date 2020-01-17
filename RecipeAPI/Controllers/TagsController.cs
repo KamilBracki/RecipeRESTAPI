@@ -21,14 +21,14 @@ namespace RecipeAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Tags
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Tag>>> GetTags()
         {
             return await _context.Tags.ToListAsync();
         }
 
-        // GET: api/Tags/5
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<Tag>> GetTag(int id)
         {
@@ -42,7 +42,7 @@ namespace RecipeAPI.Controllers
             return tag;
         }
 
-        // PUT: api/Tags/5
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTag(int id, Tag tag)
         {
@@ -72,7 +72,7 @@ namespace RecipeAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Tags
+        
         [HttpPost]
         public async Task<ActionResult<Tag>> PostTag(Tag tag)
         {
@@ -82,7 +82,7 @@ namespace RecipeAPI.Controllers
             return CreatedAtAction("GetTag", new { id = tag.Id }, tag);
         }
 
-        // DELETE: api/Tags/5
+        /
         [HttpDelete("{id}")]
         public async Task<ActionResult<Tag>> DeleteTag(int id)
         {
